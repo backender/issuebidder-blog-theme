@@ -28,12 +28,12 @@
 
 		<!-- wordpress head functions -->
 		<?php //wp_head(); ?>
-	    <link href="wp-content/themes/wordpress-bootstrap-master/library/bounce/css/bootstrap.min.css" rel="stylesheet">
-		<link href="wp-content/themes/wordpress-bootstrap-master/library/bounce/css/bootstrap-responsive.min.css" rel="stylesheet">
+	    <link href="wp-content/themes/<?php echo get_template(); ?>/library/bounce/css/bootstrap.min.css" rel="stylesheet">
+		<link href="wp-content/themes/<?php echo get_template(); ?>/library/bounce/css/bootstrap-responsive.min.css" rel="stylesheet">
 		<link href="wp-content/themes/wordpress-bootstrap-master/library/bounce/css/glyphicons.css" rel="stylesheet">
-		<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>
-	    <link href="wp-content/themes/wordpress-bootstrap-master/library/bounce/css/base.css" rel="stylesheet">
-		<link href="wp-content/themes/wordpress-bootstrap-master/library/bounce/css/blue.css" rel="stylesheet">
+		<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>
+	    <link href="wp-content/themes/<?php echo get_template(); ?>/library/bounce/css/base.css" rel="stylesheet">
+		<link href="wp-content/themes/<?php echo get_template(); ?>/library/bounce/css/blue.css" rel="stylesheet">
 		<!-- end of wordpress head -->
 
 		<!-- theme options from options panel -->
