@@ -525,3 +525,23 @@ ul.plans {
     display: none;
   }  
 }
+
+/* Sticky Footer
+------------------------- */
+html,body
+{
+    height:100%;
+    box-sizing: border-box;
+}
+
+#wrap
+{
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+    margin: 0 auto -40px;
+}
+
+#copywrite, .push{
+    height:40px;
+}
