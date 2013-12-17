@@ -33,17 +33,15 @@
                             <div class="row-fluid">
                                 <?php if(has_post_thumbnail()) { ?>
                                 <div class="span5">
-                                    <a href="single.html">
-                                        <!--<img alt="image" class="img-polaroid" src="http://quickimage.it/600x300">-->
-                                        <?php the_post_thumbnail( 'wpbs-featured' ); ?>
-                                    </a>
+                                    <!--<img alt="image" class="img-polaroid" src="http://quickimage.it/600x300">-->
+                                    <?php the_post_thumbnail( 'wpbs-featured' ); ?>
                                 </div>
                                 <div class="span7">
                                     <?php } else { ?>
                                     <div class="span12">
                                         <?php } ?>
                                     <p><?php the_excerpt(); ?></p>
-                                    <small>- <a href="<?php the_permalink(); ?>'">Read More</a></small>
+                                    <small>– <a href="<?php the_permalink(); ?>">Read More</a></small>
                                 </div>
                             </div>
                         </div>
@@ -80,16 +78,7 @@
 
                     <?php endif; ?>
 
-                    <div class="pagination pagination-right">
-                        <ul>
-                            <li><a href="#">Previous</a></li>
-                            <li><a href="#">1</a></li>
-                            <li class="active"><a href="#">2</a></li>
-                            <li><a href="#">3</a></li>
-                            <li><a href="#">4</a></li>
-                            <li><a href="#">Next</a></li>
-                        </ul>
-                    </div>
+                    <?php include 'pagination.php'; ?>
 
                 </div>
 

@@ -1,35 +1,43 @@
 <?php get_header(); ?>
+
+    <div id="header">
+        <div class="container">
+            <div class="row">
+                <div class="span12">
+                    <?php if (is_category()) { ?>
+                        <h1 class="archive_title h2">
+                            <span><?php _e("Category:", "bonestheme"); ?></span> <?php single_cat_title(); ?>
+                        </h1>
+                    <?php } elseif (is_tag()) { ?>
+                        <h1 class="archive_title h2">
+                            <span><?php _e("Posts Tagged:", "bonestheme"); ?></span> <?php single_tag_title(); ?>
+                        </h1>
+                    <?php } elseif (is_author()) { ?>
+                        <h1 class="archive_title h2">
+                            <span><?php _e("Posts By:", "bonestheme"); ?></span> <?php get_the_author_meta('display_name'); ?>
+                        </h1>
+                    <?php } elseif (is_day()) { ?>
+                        <h1 class="archive_title h2">
+                            <span><?php _e("Daily Archives:", "bonestheme"); ?></span> <?php the_time('l, F j, Y'); ?>
+                        </h1>
+                    <?php } elseif (is_month()) { ?>
+                        <h1 class="archive_title h2">
+                            <span><?php _e("Monthly Archives:", "bonestheme"); ?>:</span> <?php the_time('F Y'); ?>
+                        </h1>
+                    <?php } elseif (is_year()) { ?>
+                        <h1 class="archive_title h2">
+                            <span><?php _e("Yearly Archives:", "bonestheme"); ?>:</span> <?php the_time('Y'); ?>
+                        </h1>
+                    <?php } ?>
+                </div>
+            </div>
+        </div>
+    </div>
+
 	<div id="content">
 	  	<div class="container txt-lefty">			
 	    	<div class="row-fluid">
-		  		<div class="span9">	
-			
-					<?php if (is_category()) { ?>
-						<h1 class="archive_title h2">
-							<span><?php _e("Posts Categorized:", "bonestheme"); ?></span> <?php single_cat_title(); ?>
-						</h1>
-					<?php } elseif (is_tag()) { ?>
-						<h1 class="archive_title h2">
-							<span><?php _e("Posts Tagged:", "bonestheme"); ?></span> <?php single_tag_title(); ?>
-						</h1>
-					<?php } elseif (is_author()) { ?>
-						<h1 class="archive_title h2">
-							<span><?php _e("Posts By:", "bonestheme"); ?></span> <?php get_the_author_meta('display_name'); ?>
-						</h1>
-					<?php } elseif (is_day()) { ?>
-						<h1 class="archive_title h2">
-							<span><?php _e("Daily Archives:", "bonestheme"); ?></span> <?php the_time('l, F j, Y'); ?>
-						</h1>
-					<?php } elseif (is_month()) { ?>
-					    <h1 class="archive_title h2">
-					    	<span><?php _e("Monthly Archives:", "bonestheme"); ?>:</span> <?php the_time('F Y'); ?>
-					    </h1>
-					<?php } elseif (is_year()) { ?>
-					    <h1 class="archive_title h2">
-					    	<span><?php _e("Yearly Archives:", "bonestheme"); ?>:</span> <?php the_time('Y'); ?>
-					    </h1>
-					<?php } ?>
-					
+		  		<div class="span9">
 
 					<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
@@ -42,17 +50,15 @@
 						  <div class="row-fluid">
                             <?php if(has_post_thumbnail()) { ?>
                                 <div class="span5">
-                                  <a href="single.html">
                                     <!--<img alt="image" class="img-polaroid" src="http://quickimage.it/600x300">-->
                                     <?php the_post_thumbnail( 'wpbs-featured' ); ?>
-                                  </a>
                                 </div>
                                 <div class="span7">
                             <?php } else { ?>
                                 <div class="span12">
                             <?php } ?>
 			                  <p><?php the_excerpt(); ?></p>
-                              <small>- <a href="#">Read More</a></small>
+                              <small>– <a href="<?php the_permalink(); ?>">Read More</a></small>
 							</div>
 						  </div>
 			            </div>
@@ -89,16 +95,7 @@
 					
 					<?php endif; ?>
 
-		            <div class="pagination pagination-right">
-		              <ul>
-		                <li><a href="#">Previous</a></li>
-		                <li><a href="#">1</a></li>
-		                <li class="active"><a href="#">2</a></li>
-		                <li><a href="#">3</a></li>
-		                <li><a href="#">4</a></li>
-		                <li><a href="#">Next</a></li>
-		              </ul>
-		            </div>			
+		            <?php include 'pagination.php'; ?>
 		  		
 		  		</div>
 

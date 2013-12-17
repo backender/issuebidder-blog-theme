@@ -41,7 +41,18 @@
 
 		<!-- typeahead plugin - if top nav search bar enabled -->
 		<?php require_once('library/typeahead.php'); ?>
-				
+
+        <script>
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+            ga('create', 'UA-46246970-2', 'issue-bidder.com');
+            ga('send', 'pageview');
+
+        </script>
+
 	</head>
 	
 	<body <?php body_class(); ?>>
@@ -52,9 +63,10 @@
 				
 				<div class="navbar navbar-fixed-top">
 					<div class="navbar-inner">
-						<div class="container-fluid nav-container">
+						<div class="container">
 							<nav role="navigation">
-								<a class="brand" id="logo" title="<?php echo get_bloginfo('description'); ?>" href="<?php echo home_url(); ?>">
+                                <div class="brand" style="width:auto; height:30px; padding-top: 0px; padding-right: 30px; display:block; background-repeat: no-repeat; background-position: center; background-image:url('https://issue-bidder.com/bundles/issuebidderuser/img/logo_nav.png')"></div>
+								<a class="brand" style="padding-left: 0px; margin-left: 5px;" id="logo" title="<?php echo get_bloginfo('description'); ?>" href="<?php echo home_url(); ?>">
 									<?php if(of_get_option('branding_logo','')!='') { ?>
 										<img src="<?php echo of_get_option('branding_logo'); ?>" alt="<?php echo get_bloginfo('description'); ?>">
 										<?php }
@@ -66,9 +78,15 @@
 							        <span class="icon-bar"></span>
 								</a>
 								
-								<div class="nav-collapse">
-									<?php bones_main_nav(); // Adjust using Menus in Wordpress Admin ?>
-								</div>
+
+                                <div class="nav-collapse collapse">
+                                    <?php //bones_main_nav(); // Adjust using Menus in Wordpress Admin ?>
+                                    <ul class="nav pull-right animated">
+                                        <li>
+                                            <a href="http://issue-bidder.com/home">Back to Home</a>
+                                        </li>
+                                    </ul>
+                                </div>
 								
 							</nav>
 							
