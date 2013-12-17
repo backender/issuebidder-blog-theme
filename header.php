@@ -56,7 +56,7 @@
 	</head>
 	
 	<body <?php body_class(); ?>>
-				
+    <div id="wrap">
 		<header role="banner">
 		
 			<div id="inner-header" class="clearfix">

@@ -50,7 +50,7 @@
                             <div class="span12">
                                 <?php } ?>
                                 <p><?php the_excerpt(); ?></p>
-                                <small>- <a href="#">Read More</a></small>
+                                <small>– <a href="<?php the_permalink(); ?>">Read More</a></small>
                             </div>
                         </div>
                     </div>

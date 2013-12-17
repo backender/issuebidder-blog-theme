@@ -32,12 +32,12 @@
                             <hr>
                             <div class="row-fluid">
                                 <?php if(has_post_thumbnail()) { ?>
-                                <div class="span5">
-                                    <!--<img alt="image" class="img-polaroid" src="http://quickimage.it/600x300">-->
-                                    <?php the_post_thumbnail( 'wpbs-featured' ); ?>
-                                </div>
-                                <div class="span7">
-                                    <?php } else { ?>
+                                    <div class="span5">
+                                        <!--<img alt="image" class="img-polaroid" src="http://quickimage.it/600x300">-->
+                                        <?php the_post_thumbnail( 'wpbs-featured' ); ?>
+                                    </div>
+                                    <div class="span7">
+                                <?php } else { ?>
                                     <div class="span12">
                                         <?php } ?>
                                     <p><?php the_excerpt(); ?></p>
@@ -89,10 +89,5 @@
             </div>
         </div>
     </div>
-
-
-
-
-
 
 <?php get_footer(); ?>
